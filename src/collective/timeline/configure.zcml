@@ -16,7 +16,7 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="collective.timeline site (collective.timeline)"
+      title="Timeline (collective.timeline)"
       directory="profiles/default"
       description="Installs the collective.timeline add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
