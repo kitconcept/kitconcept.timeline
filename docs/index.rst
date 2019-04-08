@@ -1,0 +1,5 @@
+====================
+collective.timeline
+====================
+
+User documentation
