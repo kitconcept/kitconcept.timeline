@@ -88,6 +88,9 @@
   border-bottom-left-radius: 50%;
   */
 }
+#content-core .timeline > li > .timeline-badge > a {
+  border: 0;
+}
 .timeline > li.timeline-inverted > .timeline-panel {
   float: right;
 }

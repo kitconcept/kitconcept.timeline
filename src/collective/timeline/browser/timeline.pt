@@ -14,7 +14,7 @@
                                            if repeat.item.odd else
                                            None">
             <div class="timeline-badge primary">
-              <a>
+              <a tal:attributes="href item/getURL">
                 <i tal:attributes="class python:'glyphicon glyphicon-record' +
                                                 (' invert'
                                                  if repeat.item.odd else
