@@ -42,4 +42,6 @@
       name="collective.timeline.Year"
       />
 
+  <adapter name="date" factory=".indexers.dateIndexer" />
+
 </configure>

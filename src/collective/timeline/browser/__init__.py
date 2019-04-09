@@ -11,4 +11,6 @@ class TimelineView(DefaultView):
             context=self.context,
             depth=1,
             portal_type='Timeline Entry',
+            sort_on='date',
+            sort_order='reverse',
         )
