@@ -36,4 +36,10 @@
       factory=".setuphandlers.HiddenProfiles"
       name="collective.timeline-hiddenprofiles" />
 
+  <utility
+      provides="zope.schema.interfaces.IVocabularyFactory"
+      component=".vocabulary.YearVocabulary"
+      name="collective.timeline.Year"
+      />
+
 </configure>

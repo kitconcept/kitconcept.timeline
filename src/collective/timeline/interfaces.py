@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 from collective.timeline import _
+from datetime import date
 from plone.namedfile import field
 from plone.supermodel import model
 from zope import schema
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
+from zope.schema.vocabulary import SimpleTerm
+from zope.schema.vocabulary import SimpleVocabulary
 
 
 class ICollectivetimelineCoreLayer(IDefaultBrowserLayer):
@@ -28,7 +31,8 @@ class ITimelineEntry(model.Schema):
         required=False,
     )
 
-    date = schema.Datetime(
+    date = schema.Choice(
         title=_(u'Date'),
+        vocabulary='collective.timeline.Year',
         required=False,
     )
