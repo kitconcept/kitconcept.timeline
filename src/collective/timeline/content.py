@@ -1,9 +1,15 @@
 # -*- coding: utf-8 -*-
-from .interfaces import IHomepage
+from collective.timeline.interfaces import ITimeline
+from collective.timeline.interfaces import ITimelineEntry
 from plone.dexterity.content import Container
 from zope.interface import implementer
 
 
-@implementer(IHomepage)
-class Homepage(Container):
-    """Homepage content type"""
+@implementer(ITimeline)
+class Timeline(Container):
+  """The Timeline object"""
+
+
+@implementer(ITimelineEntry)
+class TimelineEntry(Container):
+  """The Timeline Entry object."""

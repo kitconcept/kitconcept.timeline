@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="collective.timeline">
+  <body>
+    <metal:content-core fill-slot="content-core">
+      <ul class="timeline">
+        <tal:repeat repeat="item view/results">
+          <li tal:define="obj item/getObject"
+              tal:attributes="class python:'timeline-inverted'
+                                           if repeat.item.odd else
+                                           None">
+            <div class="timeline-badge primary">
+              <a tal:attributes="href item/getURL">
+                <i tal:attributes="class python:' invert'
+                                                if repeat.item.odd else
+                                                '';
+                                   title string:Year ${item/date};"
+                   rel="tooltip"></i>
+              </a>
+            </div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <tal:image define="scales obj/@@images;
+                                   thumbnail python:scales.scale('image', scale='large')"
+                           condition="thumbnail">
+                  <img class="img-responsive"
+                       tal:attributes="src thumbnail/url;"
+                       />
+                </tal:image>
+              </div>
+              <div class="timeline-body">
+                <p tal:content="item/Description" />
+              </div>
+            </div>
+          </li>
+        </tal:repeat>
+        <li class="clearfix" />
+      </ul>
+    </metal:content-core>
+  </body>
+</html>
