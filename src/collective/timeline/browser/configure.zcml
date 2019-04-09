@@ -17,4 +17,13 @@
       directory="static"
       />
 
+  <browser:page
+      name="view"
+      for="collective.timeline.interfaces.ITimeline"
+      class="collective.timeline.browser.TimelineView"
+      template="timeline.pt"
+      permission="zope2.View"
+      layer="collective.timeline.interfaces.ICollectivetimelineCoreLayer"
+      />
+
 </configure>
