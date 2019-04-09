@@ -15,10 +15,9 @@
                                            None">
             <div class="timeline-badge primary">
               <a tal:attributes="href item/getURL">
-                <i tal:attributes="class python:'glyphicon glyphicon-record' +
-                                                (' invert'
-                                                 if repeat.item.odd else
-                                                 '');
+                <i tal:attributes="class python:' invert'
+                                                if repeat.item.odd else
+                                                '';
                                    title string:Year ${item/date};"
                    rel="tooltip"></i>
               </a>
@@ -39,9 +38,7 @@
             </div>
           </li>
         </tal:repeat>
-        <li class="clearfix"
-            style="float: none;">
-        </li>
+        <li class="clearfix" />
       </ul>
     </metal:content-core>
   </body>
