@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.timeline.interfaces import ITimelineEntry
+from kitconcept.timeline.interfaces import ITimelineEntry
 from plone.indexer import indexer
 
 

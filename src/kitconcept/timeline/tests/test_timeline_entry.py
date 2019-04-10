@@ -6,41 +6,41 @@ from plone.app.testing import setRoles
 from plone.dexterity.interfaces import IDexterityFTI
 from plone import api
 
-from collective.timeline.testing import COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING  # noqa
-from collective.timeline.interfaces import IHomepage
+from kitconcept.timeline.testing import KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING  # noqa
+from kitconcept.timeline.interfaces import ITimelineEntry
 
 import unittest
 
 
-class HomePageIntegrationTest(unittest.TestCase):
+class TimelineEntryIntegrationTest(unittest.TestCase):
 
-    layer = COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING
+    layer = KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
         self.portal = self.layer['portal']
         setRoles(self.portal, TEST_USER_ID, ['Manager'])
         self.installer = api.portal.get_tool('portal_quickinstaller')
-        fti = queryUtility(IDexterityFTI, name='Homepage')
+        fti = queryUtility(IDexterityFTI, name='Timeline Entry')
         fti.global_allow = True
 
     def test_schema(self):
-        fti = queryUtility(IDexterityFTI, name='Homepage')
+        fti = queryUtility(IDexterityFTI, name='Timeline Entry')
         schema = fti.lookupSchema()
-        self.assertEqual(IHomepage, schema)
+        self.assertEqual(ITimelineEntry, schema)
 
     def test_fti(self):
-        fti = queryUtility(IDexterityFTI, name='Homepage')
+        fti = queryUtility(IDexterityFTI, name='Timeline Entry')
         self.assertTrue(fti)
 
     def test_factory(self):
-        fti = queryUtility(IDexterityFTI, name='Homepage')
+        fti = queryUtility(IDexterityFTI, name='Timeline Entry')
         factory = fti.factory
         obj = createObject(factory)
-        self.assertTrue(IHomepage.providedBy(obj))
+        self.assertTrue(ITimelineEntry.providedBy(obj))
 
     def test_adding(self):
-        self.portal.invokeFactory('Homepage', 'Homepage')
+        self.portal.invokeFactory('Timeline Entry', 'timelineentry')
         self.assertTrue(
-            IHomepage.providedBy(self.portal['Homepage'])
+            ITimelineEntry.providedBy(self.portal['timelineentry'])
         )

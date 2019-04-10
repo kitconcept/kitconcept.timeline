@@ -4,17 +4,17 @@
 #
 # Run this robot test stand-alone:
 #
-#  $ bin/test -s collective.timeline -t test_example.robot --all
+#  $ bin/test -s kitconcept.timeline -t test_example.robot --all
 #
 # Run this robot test with robot server (which is faster):
 #
 # 1) Start robot server:
 #
-# $ bin/robot-server --reload-path src collective.timeline.testing.Collectivetimeline_CORE_ACCEPTANCE_TESTING
+# $ bin/robot-server --reload-path src kitconcept.timeline.testing.Kitconcepttimeline_CORE_ACCEPTANCE_TESTING
 #
 # 2) Run robot tests:
 #
-# $ bin/robot src/collective/timeline/core/tests/robot/test_example.robot
+# $ bin/robot src/kitconcept/timeline/core/tests/robot/test_example.robot
 #
 # See the http://docs.plone.org for further details (search for robot
 # framework).

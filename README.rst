@@ -3,7 +3,7 @@
    This text does not appear on pypi or github. It is a comment.
 
 ==============================================================================
-collective.timeline
+kitconcept.timeline
 ==============================================================================
 
 .. image:: https://kitconcept.com/logo.svg
@@ -11,8 +11,8 @@ collective.timeline
    :target: https://kitconcept.com/
 
 
-.. image:: https://secure.travis-ci.org/collective/collective.timeline.png
-    :target: http://travis-ci.org/collective/collective.timeline
+.. image:: https://secure.travis-ci.org/kitconcept/kitconcept.timeline.png
+    :target: http://travis-ci.org/kitconcept/kitconcept.timeline
 
 Development
 -----------

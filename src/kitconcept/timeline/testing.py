@@ -13,10 +13,10 @@ from plone.app.testing import TEST_USER_ID
 from plone.app.testing import TEST_USER_NAME
 from plone.testing import z2
 
-import collective.timeline
+import kitconcept.timeline
 
 
-class CollectivetimelineCoreLayer(PloneSandboxLayer):
+class KitconcepttimelineCoreLayer(PloneSandboxLayer):
 
     defaultBases = (PLONE_APP_CONTENTTYPES_FIXTURE,)
 
@@ -24,7 +24,7 @@ class CollectivetimelineCoreLayer(PloneSandboxLayer):
         # Load any other ZCML that is required for your tests.
         # The z3c.autoinclude feature is disabled in the Plone fixture base
         # layer.
-        self.loadZCML(package=collective.timeline)
+        self.loadZCML(package=kitconcept.timeline)
 
     def setUpPloneSite(self, portal):
         setRoles(portal, TEST_USER_ID, ['Manager'])
@@ -36,29 +36,29 @@ class CollectivetimelineCoreLayer(PloneSandboxLayer):
             container=portal
         )
         logout()
-        applyProfile(portal, 'collective.timeline:default')
+        applyProfile(portal, 'kitconcept.timeline:default')
 
 
-COLLECTIVETIMELINE_CORE_FIXTURE = CollectivetimelineCoreLayer()
+KITCONCEPTTIMELINE_CORE_FIXTURE = KitconcepttimelineCoreLayer()
 
 
-COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING = IntegrationTesting(
-    bases=(COLLECTIVETIMELINE_CORE_FIXTURE,),
-    name='CollectivetimelineCoreLayer:IntegrationTesting'
+KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING = IntegrationTesting(
+    bases=(KITCONCEPTTIMELINE_CORE_FIXTURE,),
+    name='KitconcepttimelineCoreLayer:IntegrationTesting'
 )
 
 
-COLLECTIVETIMELINE_CORE_FUNCTIONAL_TESTING = FunctionalTesting(
-    bases=(COLLECTIVETIMELINE_CORE_FIXTURE, z2.ZSERVER_FIXTURE),
-    name='CollectivetimelineCoreLayer:FunctionalTesting'
+KITCONCEPTTIMELINE_CORE_FUNCTIONAL_TESTING = FunctionalTesting(
+    bases=(KITCONCEPTTIMELINE_CORE_FIXTURE, z2.ZSERVER_FIXTURE),
+    name='KitconcepttimelineCoreLayer:FunctionalTesting'
 )
 
 
-COLLECTIVETIMELINE_CORE_ACCEPTANCE_TESTING = FunctionalTesting(
+KITCONCEPTTIMELINE_CORE_ACCEPTANCE_TESTING = FunctionalTesting(
     bases=(
-        COLLECTIVETIMELINE_CORE_FIXTURE,
+        KITCONCEPTTIMELINE_CORE_FIXTURE,
         REMOTE_LIBRARY_BUNDLE_FIXTURE,
         z2.ZSERVER_FIXTURE
     ),
-    name='CollectivetimelineCoreLayer:AcceptanceTesting'
+    name='KitconcepttimelineCoreLayer:AcceptanceTesting'
 )

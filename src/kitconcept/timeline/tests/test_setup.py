@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Setup tests for this package."""
-from collective.timeline.testing import COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING  # noqa
+from kitconcept.timeline.testing import KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING  # noqa
 from plone import api
 
 try:
@@ -14,9 +14,9 @@ import unittest
 
 
 class TestSetup(unittest.TestCase):
-    """Test that collective.timeline is properly installed."""
+    """Test that kitconcept.timeline is properly installed."""
 
-    layer = COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING
+    layer = KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING
 
     def setUp(self):
         """Custom shared utility setup for tests."""
@@ -27,54 +27,54 @@ class TestSetup(unittest.TestCase):
             self.installer = api.portal.get_tool('portal_quickinstaller')
 
     def test_product_installed(self):
-        """Test if collective.timeline is installed."""
+        """Test if kitconcept.timeline is installed."""
         if HAS_INSTALLER:
             self.assertTrue(
-                self.installer.is_product_installed('collective.timeline')
+                self.installer.is_product_installed('kitconcept.timeline')
             )
         else:
             self.assertTrue(
                 self.installer.isProductInstalled(
-                    'collective.timeline'
+                    'kitconcept.timeline'
                 )
             )
 
     def test_browserlayer(self):
-        """Test that ICollectivetimelineCoreLayer is registered."""
-        from collective.timeline.interfaces import (
-            ICollectivetimelineCoreLayer)
+        """Test that IKitconcepttimelineCoreLayer is registered."""
+        from kitconcept.timeline.interfaces import (
+            IKitconcepttimelineCoreLayer)
         from plone.browserlayer import utils
-        self.assertIn(ICollectivetimelineCoreLayer, utils.registered_layers())
+        self.assertIn(IKitconcepttimelineCoreLayer, utils.registered_layers())
 
 
 class TestUninstall(unittest.TestCase):
 
-    layer = COLLECTIVETIMELINE_CORE_INTEGRATION_TESTING
+    layer = KITCONCEPTTIMELINE_CORE_INTEGRATION_TESTING
 
     def setUp(self):
         self.portal = self.layer['portal']
         if HAS_INSTALLER:
             self.installer = get_installer(self.portal)
-            self.installer.uninstall_product('collective.timeline')
+            self.installer.uninstall_product('kitconcept.timeline')
         else:
             self.installer = api.portal.get_tool('portal_quickinstaller')
-            self.installer.uninstallProducts(['collective.timeline'])
+            self.installer.uninstallProducts(['kitconcept.timeline'])
 
     def test_product_uninstalled(self):
-        """Test if collective.timeline is cleanly uninstalled."""
+        """Test if kitconcept.timeline is cleanly uninstalled."""
         if HAS_INSTALLER:
             self.assertFalse(
-                self.installer.is_product_installed('collective.timeline')
+                self.installer.is_product_installed('kitconcept.timeline')
             )
         else:
             self.assertFalse(
                 self.installer.isProductInstalled(
-                    'collective.timeline'
+                    'kitconcept.timeline'
                 )
             )
 
     def test_browserlayer_removed(self):
-        """Test that ICollectivetimelineCoreLayer is removed."""
-        from collective.timeline.interfaces import ICollectivetimelineCoreLayer
+        """Test that IKitconcepttimelineCoreLayer is removed."""
+        from kitconcept.timeline.interfaces import IKitconcepttimelineCoreLayer
         from plone.browserlayer import utils
-        self.assertNotIn(ICollectivetimelineCoreLayer, utils.registered_layers())
+        self.assertNotIn(IKitconcepttimelineCoreLayer, utils.registered_layers())

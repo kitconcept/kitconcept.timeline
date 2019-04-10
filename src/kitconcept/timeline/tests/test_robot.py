@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from collective.timeline.testing import COLLECTIVETIMELINE_CORE_ACCEPTANCE_TESTING  # noqa
+from kitconcept.timeline.testing import KITCONCEPTTIMELINE_CORE_ACCEPTANCE_TESTING  # noqa
 from plone.app.testing import ROBOT_TEST_LEVEL
 from plone.testing import layered
 
@@ -22,7 +22,7 @@ def test_suite():
         suite.addTests([
             layered(
                 robottestsuite,
-                layer=COLLECTIVETIMELINE_CORE_ACCEPTANCE_TESTING
+                layer=KITCONCEPTTIMELINE_CORE_ACCEPTANCE_TESTING
             ),
         ])
     return suite

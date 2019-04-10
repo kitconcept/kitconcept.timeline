@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
-from collective.timeline import _
+from kitconcept.timeline import _
 from datetime import date
 from plone.namedfile import field
 from plone.supermodel import model
@@ -10,7 +10,7 @@ from zope.schema.vocabulary import SimpleTerm
 from zope.schema.vocabulary import SimpleVocabulary
 
 
-class ICollectivetimelineCoreLayer(IDefaultBrowserLayer):
+class IKitconcepttimelineCoreLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
 
@@ -33,6 +33,6 @@ class ITimelineEntry(model.Schema):
 
     date = schema.Choice(
         title=_(u'Date'),
-        vocabulary='collective.timeline.Year',
+        vocabulary='kitconcept.timeline.Year',
         required=False,
     )

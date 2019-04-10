@@ -4,7 +4,7 @@
     xmlns:zcml="http://namespaces.zope.org/zcml"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.timeline">
+    i18n_domain="kitconcept.timeline">
 
   <i18n:registerTranslations directory="locales" />
 
@@ -16,30 +16,30 @@
 
   <genericsetup:registerProfile
       name="default"
-      title="Timeline (collective.timeline)"
+      title="Timeline (kitconcept.timeline)"
       directory="profiles/default"
-      description="Installs the collective.timeline add-on."
+      description="Installs the kitconcept.timeline add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.post_install"
       />
 
   <genericsetup:registerProfile
       name="uninstall"
-      title="collective.timeline site (collective.timeline): uninstall"
+      title="Timeline (kitconcept.timeline): uninstall"
       directory="profiles/uninstall"
-      description="Uninstalls the collective.timeline add-on."
+      description="Uninstalls the kitconcept.timeline add-on."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       post_handler=".setuphandlers.uninstall"
       />
 
   <utility
       factory=".setuphandlers.HiddenProfiles"
-      name="collective.timeline-hiddenprofiles" />
+      name="kitconcept.timeline-hiddenprofiles" />
 
   <utility
       provides="zope.schema.interfaces.IVocabularyFactory"
       component=".vocabulary.YearVocabulary"
-      name="collective.timeline.Year"
+      name="kitconcept.timeline.Year"
       />
 
   <adapter name="date" factory=".indexers.dateIndexer" />

@@ -5,7 +5,7 @@ from zope.i18nmessageid import MessageFactory
 import logging
 
 
-PROJECTNAME = 'collective.timeline'
+PROJECTNAME = 'kitconcept.timeline'
 _ = MessageFactory(PROJECTNAME)
 logger = logging.getLogger(PROJECTNAME)
 config = {}

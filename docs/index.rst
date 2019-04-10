@@ -1,5 +1,5 @@
 ====================
-collective.timeline
+kitconcept.timeline
 ====================
 
 User documentation

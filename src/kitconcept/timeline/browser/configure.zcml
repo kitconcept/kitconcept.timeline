@@ -2,28 +2,28 @@
     xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:plone="http://namespaces.plone.org/plone"
-    i18n_domain="collective.timeline">
+    i18n_domain="kitconcept.timeline">
 
   <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
   <include package="z3c.jbot" file="meta.zcml" />
   <browser:jbot
       directory="overrides"
-      layer="collective.timeline.interfaces.ICollectivetimelineCoreLayer"
+      layer="kitconcept.timeline.interfaces.IKitconcepttimelineCoreLayer"
       />
 
   <!-- Publish static files -->
   <browser:resourceDirectory
-      name="collectivetimeline"
+      name="kitconcepttimeline"
       directory="static"
       />
 
   <browser:page
       name="view"
-      for="collective.timeline.interfaces.ITimeline"
-      class="collective.timeline.browser.TimelineView"
+      for="kitconcept.timeline.interfaces.ITimeline"
+      class="kitconcept.timeline.browser.TimelineView"
       template="timeline.pt"
       permission="zope2.View"
-      layer="collective.timeline.interfaces.ICollectivetimelineCoreLayer"
+      layer="kitconcept.timeline.interfaces.IKitconcepttimelineCoreLayer"
       />
 
 </configure>

@@ -1,4 +1,4 @@
-graft src/collective/timeline
+graft src/kitconcept/timeline
 graft docs
 include *.rst
 global-exclude *.pyc

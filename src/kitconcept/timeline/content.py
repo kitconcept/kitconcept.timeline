@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
-from collective.timeline.interfaces import ITimeline
-from collective.timeline.interfaces import ITimelineEntry
+from kitconcept.timeline.interfaces import ITimeline
+from kitconcept.timeline.interfaces import ITimelineEntry
 from plone.dexterity.content import Container
 from zope.interface import implementer
 

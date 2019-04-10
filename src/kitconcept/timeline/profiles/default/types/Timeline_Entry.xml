@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <object
-    i18n:domain="collective.timeline"
+    i18n:domain="kitconcept.timeline"
     meta_type="Dexterity FTI"
-    name="Timeline"
+    name="TimelineEntry"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n">
 
   <!-- Basic properties -->
   <property
       i18n:translate=""
-      name="title">Timeline</property>
+      name="title">Timeline Entry</property>
   <property
       i18n:translate=""
       name="description"></property>
 
   <property name="allow_discussion">False</property>
-  <property name="factory">Timeline</property>
+  <property name="factory">TimelineEntry</property>
   <property name="icon_expr"></property>
   <property name="link_target"></property>
 
   <!-- Hierarchy control -->
   <property name="allowed_content_types">
-    <element value="Timeline Entry"/>
   </property>
   <property name="filter_content_types">True</property>
-  <property name="global_allow">True</property>
+  <property name="global_allow">False</property>
 
   <!-- Schema, class and security -->
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">collective.timeline.content.Timeline</property>
+  <property name="klass">kitconcept.timeline.content.TimelineEntry</property>
   <property name="model_file"></property>
   <property name="model_source"></property>
-  <property name="schema">collective.timeline.interfaces.ITimeline</property>
+  <property name="schema">kitconcept.timeline.interfaces.ITimelineEntry</property>
 
   <!-- Enabled behaviors -->
   <property name="behaviors" purge="false">
     <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
+    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
     <element value="plone.app.content.interfaces.INameFromTitle"/>
     <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
     <element value="plone.app.dexterity.behaviors.id.IShortName"/>
   </property>
 
   <!-- View information -->
-  <property name="add_view_expr">string:${folder_url}/++add++Timeline</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Timeline Entry</property>
   <property name="immediate_view">view</property>
   <property name="default_view">view</property>
   <property name="default_view_fallback">False</property>
