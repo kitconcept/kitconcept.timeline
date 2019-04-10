@@ -67,6 +67,11 @@
   border-bottom: 14px solid transparent;
   content: " ";
 }
+.timeline > li > .timeline-panel > .timeline-heading > .img-responsive {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
 .timeline > li > .timeline-badge {
   color: #fff;
   width: 24px;
