@@ -81,4 +81,21 @@ release:
 clean:
 	git clean -Xdf
 
+.PHONY: start
+start:  ## Start backend and frontend
+	tmux \
+		new-session  'make start-backend; read' \; \
+		split-window -h 'make start-frontend; read' \; \
+		select-pane -t 0;
+
+.PHONY: start-backend
+start-backend:  ## Start backend
+	@echo "$(GREEN)==> Start Backend$(RESET)"
+	bin/instance fg
+
+.PHONY: start-frontend
+start-frontend:  ## Start frontend
+	@echo "$(GREEN)==> Start Frontend$(RESET)"
+	bin/debug-glossary
+
 .PHONY: all clean
