@@ -29,7 +29,7 @@
   <browser:viewlet
       name="kitconcept.timeline.resources"
       manager="plone.app.layout.viewlets.interfaces.IPortalTop"
-      class=".views.ResourcesViewlet"
+      class=".ResourcesViewlet"
       template="static/resources.pt"
       permission="zope2.Public"
       layer="kitconcept.timeline.interfaces.IKitconcepttimelineCoreLayer"

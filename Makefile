@@ -96,6 +96,6 @@ start-backend:  ## Start backend
 .PHONY: start-frontend
 start-frontend:  ## Start frontend
 	@echo "$(GREEN)==> Start Frontend$(RESET)"
-	bin/debug-glossary
+	bin/debug-timeline
 
 .PHONY: all clean

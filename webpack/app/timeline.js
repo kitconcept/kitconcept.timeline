@@ -1,9 +1,9 @@
 $(function() {
-  var my_posts = $("[rel=tooltip]");
-  var size = $(window).width();
+  let my_posts = $("[rel=tooltip]");
+  let size = $(window).width();
 
-  for (i=0; i < my_posts.length; i++) {
-    the_post = $(my_posts[i]);
+  for (let i=0; i < my_posts.length; i++) {
+    let the_post = $(my_posts[i]);
 
     if (the_post.hasClass('invert') && size >= 767 ) {
       the_post.tooltip({
