@@ -19,6 +19,7 @@ matrix:
       env: PLONE_VERSION=5.1.x
     - python: "2.7"
       env: PLONE_VERSION=5.2.x
+  allow_failures:
     - python: "3.7"
       env: PLONE_VERSION=5.2.x
   exclude:
