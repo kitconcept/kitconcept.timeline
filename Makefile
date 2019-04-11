@@ -13,7 +13,6 @@ RESET=`tput sgr0`
 YELLOW=`tput setaf 3`
 
 all: .installed.cfg
-	bin/test
 
 # Add the following 'help' target to your Makefile
 # And add help text after each target name starting with '\#\#'
@@ -72,13 +71,20 @@ build-py3:  ## Build Plone 5.2 with Python 3
 bin/python bin/pip:
 	virtualenv --clear --python=python$(version) .
 
-test:
+.PHONY: Test
+test:  ## Test
 	bin/test
 
-release:
+.PHONY: Code Analysis
+code-analysis:  ## Code Analysis
+	bin/code-analysis
+
+.PHONY: Release
+release:  ## Release
 	bin/fullrelease
 
-clean:
+.PHONY: Clean
+clean:  ## Clean
 	git clean -Xdf
 
 .PHONY: start
