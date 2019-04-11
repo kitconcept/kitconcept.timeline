@@ -71,13 +71,20 @@ build-py3:  ## Build Plone 5.2 with Python 3
 bin/python bin/pip:
 	virtualenv --clear --python=python$(version) .
 
-test:
+.PHONY: Test
+test:  ## Test
 	bin/test
 
-release:
+.PHONY: Code Analysis
+code-analysis:  ## Code Analysis
+	bin/code-analysis
+
+.PHONY: Release
+release:  ## Release
 	bin/fullrelease
 
-clean:
+.PHONY: Clean
+clean:  ## Clean
 	git clean -Xdf
 
 .PHONY: all clean
