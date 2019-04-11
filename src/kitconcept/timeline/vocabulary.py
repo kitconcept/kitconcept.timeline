@@ -12,7 +12,7 @@ def YearVocabulary(context):
         SimpleTerm(value=year)
         for year in range(
             current_year + 1,
-            current_year - 20,
+            current_year - 30,
             -1
         )
     ])

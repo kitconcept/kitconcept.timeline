@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from plone import api
+from plone.app.layout.viewlets import ViewletBase
 from plone.dexterity.browser.view import DefaultView
 
 
@@ -14,3 +15,7 @@ class TimelineView(DefaultView):
             sort_on='date',
             sort_order='reverse',
         )
+
+
+class ResourcesViewlet(ViewletBase):
+    """This viewlet inserts static resources on page header."""
