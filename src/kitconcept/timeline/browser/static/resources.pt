@@ -1,6 +1,6 @@
 
-  <link rel="stylesheet" tal:attributes="href string:${view/site_url}/++resource++kitconcepttimeline/timeline-4b42f26.css" />
+  <link rel="stylesheet" tal:attributes="href string:${view/site_url}/++resource++kitconcepttimeline/timeline-46dc015.css" />
 
 
-  <script defer tal:attributes="src string:${view/site_url}/++resource++kitconcepttimeline/timeline-4b42f26.js"></script>
+  <script defer tal:attributes="src string:${view/site_url}/++resource++kitconcepttimeline/timeline-46dc015.js"></script>
 
