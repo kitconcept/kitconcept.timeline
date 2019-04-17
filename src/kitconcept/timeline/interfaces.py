@@ -1,13 +1,10 @@
 # -*- coding: utf-8 -*-
 """Module where all interfaces, events and exceptions live."""
 from kitconcept.timeline import _
-from datetime import date
 from plone.namedfile import field
 from plone.supermodel import model
 from zope import schema
 from zope.publisher.interfaces.browser import IDefaultBrowserLayer
-from zope.schema.vocabulary import SimpleTerm
-from zope.schema.vocabulary import SimpleVocabulary
 
 
 class IKitconcepttimelineCoreLayer(IDefaultBrowserLayer):
@@ -21,18 +18,10 @@ class ITimeline(model.Schema):
 class ITimelineEntry(model.Schema):
     """Timeline Item content type interface."""
 
-    image = field.NamedBlobImage(
-        title=_(u'Image'),
-        required=False,
-    )
+    image = field.NamedBlobImage(title=_(u"Image"), required=False)
 
-    copyright = schema.TextLine(
-        title=_(u'Copyright'),
-        required=False,
-    )
+    copyright = schema.TextLine(title=_(u"Copyright"), required=False)
 
     date = schema.Choice(
-        title=_(u'Date'),
-        vocabulary='kitconcept.timeline.Year',
-        required=False,
+        title=_(u"Date"), vocabulary="kitconcept.timeline.Year", required=False
     )
