@@ -4,4 +4,4 @@ include *.rst
 include *.txt
 global-exclude *.pyc
 global-exclude Makefile
-global-exclude webpack
+recursive-exclude webpack
