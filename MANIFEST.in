@@ -2,6 +2,6 @@ graft src/kitconcept/timeline
 graft docs
 include *.rst
 include *.txt
-exclude webpack
 global-exclude *.pyc
 global-exclude Makefile
+recursive-exclude webpack *
