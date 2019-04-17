@@ -15,7 +15,7 @@ long_description = '\n\n'.join([
 setup(
     name='kitconcept.timeline',
     version='1.0.0a1',
-    description='',
+    description='Plone add-on that allows to create a timeline.',
     long_description=long_description,
     # Get more from https://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=[
