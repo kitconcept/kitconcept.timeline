@@ -2,7 +2,7 @@ Changelog
 =========
 
 
-1.0.0a2 (unreleased)
+1.0.0a2 (2019-04-26)
 --------------------
 
 - Re-release 1.0.0a1 with missing pt/css/js resources.
