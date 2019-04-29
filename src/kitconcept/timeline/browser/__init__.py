@@ -20,9 +20,9 @@ class TimelineView(BrowserView):
         return api.content.find(
             context=self.context,
             depth=1,
-            portal_type='Timeline Entry',
-            sort_on='date',
-            sort_order='reverse',
+            portal_type="Timeline Entry",
+            sort_on="date",
+            sort_order="reverse",
         )
 
     def read_manifest_json(self):

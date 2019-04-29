@@ -38,6 +38,9 @@
               </div>
               <div class="timeline-body">
                 <p tal:content="item/Description" />
+                <p class="intro small"
+                   tal:condition="obj/copyright"
+                   tal:content="obj/copyright" />
               </div>
             </div>
           </li>
