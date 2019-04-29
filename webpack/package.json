@@ -25,6 +25,7 @@
   "repository": {},
   "license": "GPL-2.0",
   "dependencies": {
+    "assets-webpack-plugin": "^3.9.10",
     "sc-recipe-staticresources": "collective/sc.recipe.staticresources#1.1b5"
   }
 }

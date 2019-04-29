@@ -1,3 +1,4 @@
+const AssetsPlugin = require('assets-webpack-plugin');
 const makeConfig = require('sc-recipe-staticresources');
 
 
@@ -13,4 +14,14 @@ module.exports = makeConfig(
 
   //publicPath
   '++resource++kitconcepttimeline/',
+
+  //callback
+  (config, options) => {
+    config.plugins.push(
+      new AssetsPlugin({
+        path: options.path,
+      })
+    );
+  },
+
 );
