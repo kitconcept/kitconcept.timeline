@@ -15,7 +15,7 @@ class TimelineView(BrowserView):
     def __call__(self):
         self.manifest = self.read_manifest_json()
         return self.template()
-    
+
     def results(self):
         return api.content.find(
             context=self.context,
