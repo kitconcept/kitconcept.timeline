@@ -6,6 +6,10 @@
       metal:use-macro="context/main_template/macros/master"
       i18n:domain="kitconcept.timeline">
   <body>
+    <metal:css fill-slot="style_slot">
+      <link rel="stylesheet" type="text/css"
+            tal:attributes="href python: '/{}'.format(view.manifest['main']['css'])">
+    </metal:css>
     <metal:content-core fill-slot="content-core">
       <ul class="timeline">
         <tal:repeat repeat="item view/results">
@@ -43,6 +47,8 @@
         </tal:repeat>
         <li class="clearfix" />
       </ul>
+
+      <script tal:attributes="src python: '/{}'.format(view.manifest['main']['js'])" />
     </metal:content-core>
   </body>
 </html>

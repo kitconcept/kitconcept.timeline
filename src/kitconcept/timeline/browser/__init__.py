@@ -1,11 +1,20 @@
 # -*- coding: utf-8 -*-
 from plone import api
-from plone.app.layout.viewlets import ViewletBase
-from plone.dexterity.browser.view import DefaultView
+from Products.Five.browser import BrowserView
+from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
+
+import json
+import os
 
 
-class TimelineView(DefaultView):
+class TimelineView(BrowserView):
     """Defaul view for Timeline content type."""
+
+    template = ViewPageTemplateFile('timeline.pt')
+
+    def __call__(self):
+        self.manifest = self.read_manifest_json()
+        return self.template()
 
     def results(self):
         return api.content.find(
@@ -16,6 +25,8 @@ class TimelineView(DefaultView):
             sort_order="reverse",
         )
 
-
-class ResourcesViewlet(ViewletBase):
-    """This viewlet inserts static resources on page header."""
+    def read_manifest_json(self):
+        return json.loads(
+            open(os.path.join(
+                os.path.dirname(__file__),
+                'static', 'webpack-assets.json'), 'r').read())
