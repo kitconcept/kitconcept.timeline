@@ -5,7 +5,8 @@ Changelog
 1.0.0a3 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Add complete date information.
+  [rodfersou]
 
 
 1.0.0a2 (2019-04-26)

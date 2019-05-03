@@ -13,7 +13,8 @@
     <metal:content-core fill-slot="content-core">
       <ul class="timeline">
         <tal:repeat repeat="item view/results">
-          <li tal:define="obj item/getObject"
+          <li tal:define="obj item/getObject;
+                          date obj/get_date;"
               tal:attributes="class python:'timeline-inverted'
                                            if repeat.item.odd else
                                            None">
@@ -21,12 +22,15 @@
               <a tal:attributes="href item/getURL">
                 <i tal:attributes="class python:' invert'
                                                 if repeat.item.odd else
-                                                '';
-                                   title string:Year ${item/date};"
-                   rel="tooltip"></i>
+                                                '';" />
               </a>
             </div>
             <div class="timeline-panel">
+              <div class="timeline-date"
+                   tal:condition="date">
+                <a tal:attributes="href item/getURL"
+                   tal:content="date" />
+              </div>
               <div class="timeline-heading">
                 <tal:image define="scales obj/@@images;
                                    thumbnail python:scales.scale('image', scale='large')"
@@ -35,12 +39,14 @@
                        tal:attributes="src thumbnail/url;"
                        />
                 </tal:image>
-              </div>
-              <div class="timeline-body">
-                <p tal:content="item/Description" />
                 <p class="intro small"
                    tal:condition="obj/copyright"
                    tal:content="obj/copyright" />
+              </div>
+              <div class="timeline-body">
+                <h3 class="timeline-title"
+                    tal:content="item/Title" />
+                <p tal:content="item/Description" />
               </div>
             </div>
           </li>
