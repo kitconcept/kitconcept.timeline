@@ -75,9 +75,17 @@ bin/python bin/pip:
 test:  ## Test
 	bin/test
 
+.PHONY: Test Performance
+test-performance:
+	jmeter -n -t performance.jmx -l jmeter.jtl
+
 .PHONY: Code Analysis
 code-analysis:  ## Code Analysis
 	bin/code-analysis
+
+.PHONY: Test Release
+test-release:  ## Run Pyroma and Check Manifest
+	bin/pyroma -n 10 -d .
 
 .PHONY: Release
 release:  ## Release
@@ -86,22 +94,5 @@ release:  ## Release
 .PHONY: Clean
 clean:  ## Clean
 	git clean -Xdf
-
-.PHONY: start
-start:  ## Start backend and frontend
-	tmux \
-		new-session  'make start-backend; read' \; \
-		split-window -h 'make start-frontend; read' \; \
-		select-pane -t 0;
-
-.PHONY: start-backend
-start-backend:  ## Start backend
-	@echo "$(GREEN)==> Start Backend$(RESET)"
-	bin/instance fg
-
-.PHONY: start-frontend
-start-frontend:  ## Start frontend
-	@echo "$(GREEN)==> Start Frontend$(RESET)"
-	bin/debug-timeline
 
 .PHONY: all clean
