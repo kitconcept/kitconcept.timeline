@@ -43,4 +43,5 @@ install:
   - buildout -t 10 -c travis.cfg
 script:
   - make code-analysis
+  - make test-release
   - make test
