@@ -36,12 +36,6 @@
       factory=".setuphandlers.HiddenProfiles"
       name="kitconcept.timeline-hiddenprofiles" />
 
-  <utility
-      provides="zope.schema.interfaces.IVocabularyFactory"
-      component=".vocabulary.YearVocabulary"
-      name="kitconcept.timeline.Year"
-      />
-
   <adapter name="date" factory=".indexers.dateIndexer" />
 
 </configure>
