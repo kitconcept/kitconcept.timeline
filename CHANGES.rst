@@ -5,7 +5,8 @@ Changelog
 1.0.0a4 (unreleased)
 --------------------
 
-- Nothing changed yet.
+- Fix month translation.
+  [rodfersou]
 
 
 1.0.0a3 (2019-05-03)

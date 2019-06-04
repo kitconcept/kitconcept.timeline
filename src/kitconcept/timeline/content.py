@@ -1,14 +1,9 @@
 # -*- coding: utf-8 -*-
 from kitconcept.timeline.interfaces import ITimeline
 from kitconcept.timeline.interfaces import ITimelineEntry
+from plone import api
 from plone.dexterity.content import Container
-from Products.CMFCore.utils import getToolByName
-from zope.i18n import translate
-from zope.i18nmessageid import MessageFactory
 from zope.interface import implementer
-
-
-PLMF = MessageFactory('plonelocales')
 
 
 @implementer(ITimeline)
@@ -28,8 +23,11 @@ class TimelineEntry(Container):
         if len(unique) == 2 and self.year is not None:
             return self.year
 
-        ts = getToolByName(self, 'translation_service')
-        month_name = PLMF(ts.month_msgid(self.month),
-                          default=ts.month_english(self.month))
+        util = api.portal.get_tool('translation_service')
+        month = util.translate(
+            util.month_msgid(self.month),
+            domain='plonelocales',
+            context=self
+        )
 
-        return '{}. {} {}'.format(self.day, translate(month_name), self.year)
+        return '{}. {} {}'.format(self.day, month, self.year)
