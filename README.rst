@@ -90,8 +90,7 @@ Credits
 -------
 
 .. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.timeline/master/dpg.png
-   :height: 97px
-   :width: 434px
+   :height: 100px
    :scale: 100 %
    :alt: Deutsche Physikalische Gesellschaft
    :target: https://www.dpg-physik.de/
@@ -103,6 +102,7 @@ The development of this plugin has been kindly financed by the `Deutsche Physika
 |
 
 .. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.timeline/master/kitconcept.png
+   :height: 100px
    :alt: kitconcept
    :target: https://kitconcept.com/
 
