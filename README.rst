@@ -91,7 +91,6 @@ Credits
 
 .. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.timeline/master/dpg.png
    :width: 250px
-   :scale: 100 %
    :alt: Deutsche Physikalische Gesellschaft
    :target: https://www.dpg-physik.de/
 
