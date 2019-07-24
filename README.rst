@@ -89,7 +89,7 @@ If you require professional support, feel free to drop us a note at info@kitconc
 Credits
 -------
 
-.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.timeline/master/dpg.svg
+.. image:: https://raw.githubusercontent.com/kitconcept/kitconcept.timeline/master/dpg.png
    :height: 97px
    :width: 434px
    :scale: 100 %
