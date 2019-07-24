@@ -93,7 +93,7 @@ Credits
    :height: 97px
    :width: 434px
    :scale: 100 %
-   :alt: Deutsche Physikalsiche Gesellschaft
+   :alt: Deutsche Physikalische Gesellschaft
    :target: https://www.dpg-physik.de/
 
 |
