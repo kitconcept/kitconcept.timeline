@@ -93,7 +93,7 @@ Credits
    :height: 97px
    :width: 434px
    :scale: 100 %
-   :alt: HU Berlin
+   :alt: Deutsche Physikalsiche Gesellschaft
    :target: https://www.dpg-physik.de/
 
 |
